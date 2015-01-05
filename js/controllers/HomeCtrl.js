@@ -1,3 +1,3 @@
-/**
- * Created by DND on 5.1.2015 г..
- */
+app.controller('HomeCtrl', ['$scope', function ($scope) {
+    $scope.pageTitle = 'Home';
+}]);
