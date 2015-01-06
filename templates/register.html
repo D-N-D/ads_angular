@@ -46,10 +46,8 @@
 
             <div class="form-group">
                 <label for="inputTown" class="col-lg-2 control-label">Town</label>
-                <div class="col-lg-10">
-                    <input type="text" class="form-control" id="inputTown" placeholder="Town">
-
-                </div>
+                <select id="inputTown" ng-options="town.id as town.name for town in towns" ng-model="selected.town.id">
+                </select>
             </div>
 
 
