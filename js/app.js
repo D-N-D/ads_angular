@@ -2,7 +2,7 @@
 
 var app = angular.module('adsApp', ['ngRoute', 'ngResource']);
 
-app.constant('baseServiceUrl', 'http://softuni-ads.azurewebsites.net/api/');
+app.constant('baseServiceUrl', 'http://softuni-ads.azurewebsites.net/api/')
 
 app.config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/', {
