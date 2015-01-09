@@ -7,13 +7,27 @@ app.factory('userData', ['$resource', 'baseServiceUrl', 'authentication',functio
             .$promise
             .then(function (data) {
                 authentication.saveUser(data);
+                //authentication.getHeaders();
             });
     }
 
     function loginUser(user) {
+        return $resource(baseServiceUrl + 'user/login')
+            .save(user)
+            .$promise
+            .then(function (data) {
+                authentication.saveUser(data);
+                //authentication.getHeaders();
+            });
     }
 
     function logoutUser() {
+        return $resource(baseServiceUrl + 'user/logout')
+            .save(user)
+            .$promise
+            .then(function (data) {
+                authentication.removeUser();
+            });
     }
 
     return {
