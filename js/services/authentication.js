@@ -46,12 +46,16 @@ app.factory('authentication', function () {
         return isAdmin;
     }
 
+    function isLoggedIn() {
+        return !!getUserData(); // returning a boolean value of the local storage object indicating if there's an user logged in;
+    }
 
     return {
         saveUser: saveUserData,
         getUser: getUserData,
         getHeaders: getHeaders,
         removeUser: removeUser,
-        isAdmin: isAdmin
+        isAdmin: isAdmin,
+        isLoggedIn: isLoggedIn
     }
 } );
