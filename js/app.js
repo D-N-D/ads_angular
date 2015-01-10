@@ -21,4 +21,6 @@ app.config(['$routeProvider','localStorageServiceProvider', function ($routeProv
     //// Storage settings
     //localStorageServiceProvider.setStorageType('localStorage');
     //localStorageServiceProvider.setPrefix('myAdsApp');
+
+
 }]);

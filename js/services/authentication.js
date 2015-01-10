@@ -1,20 +1,3 @@
-//app.factory('authentication', ['localStorageServiceProvider', function (localStorageServiceProvider) {
-//    var key = 'user';
-//
-//    function saveUserData(data) {
-//        localStorageServiceProvider.set(key, data);
-//    }
-//
-//    function getUserData(data) {
-//        localStorageServiceProvider.get(key, data);
-//    }
-//
-//    return {
-//        saveUser: saveUserData,
-//        getUser: getUserData
-//    }
-//} ]);
-
 app.factory('authentication', function () {
     var key = 'user';
 
@@ -23,7 +6,7 @@ app.factory('authentication', function () {
     }
 
     function getUserData() {
-        return angular.fromJson(localStorage.get(key));
+        return angular.fromJson(localStorage.getItem(key));
     }
 
     function getHeaders() {
@@ -42,12 +25,12 @@ app.factory('authentication', function () {
     }
 
     function isAdmin() {
-        var isAdmin = getUserData().isAdmin();
+        var isAdmin = getUserData().isAdmin;
         return isAdmin;
     }
 
     function isLoggedIn() {
-        return !!getUserData(); // returning a boolean value of the local storage object indicating if there's an user logged in;
+        return !!getUserData(); // boolean check if there's an user logged in;
     }
 
     return {
