@@ -33,12 +33,17 @@ app.factory('authentication', function () {
         return !!getUserData(); // boolean check if there's an user logged in;
     }
 
+    function localStorageLogout() {
+        removeUser();
+    }
+
     return {
         saveUser: saveUserData,
         getUser: getUserData,
         getHeaders: getHeaders,
         removeUser: removeUser,
         isAdmin: isAdmin,
-        isLoggedIn: isLoggedIn
+        isLoggedIn: isLoggedIn,
+        logout: localStorageLogout
     }
 } );

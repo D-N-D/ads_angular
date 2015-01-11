@@ -20,11 +20,7 @@ app.controller('PublicAdsCtrl',[ '$scope','adsData', 'filter',function ($scope, 
     $scope.pageChanged = function() {
         filter.setPageParams({startPage: 1, pageSize: adsData.numItems / adsData.numPages});
         adsData.getPublicAds(filter.getFilterParams());
-
-
     };
-
-
 
     $scope.$on('categoryClicked', function() {
         loadPublicAds(filter.getFilterParams())
