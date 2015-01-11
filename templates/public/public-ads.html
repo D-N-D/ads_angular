@@ -1,11 +1,5 @@
 <div id="public-ads">
-    <img src="images/loading.gif" ng-hide="ready" alt="loading">
-    <!--<ul ng-cloak>-->
-        <!--<li ng-repeat="ad in adsData.ads">-->
-            <!--{{ad.title}}-->
-        <!--</li>-->
-    <!--</ul>-->
-
+    <img src="images/loading.gif" ng-hide="ready" alt="loading" >
     <ul ng-cloak class="ads">
         <li ng-repeat="ad in adsData.ads" class="box">
             <h1>{{ad.title}}</h1>
@@ -20,9 +14,16 @@
         </li>
     </ul>
 
-    <div ng-if="ads.ads.length==0" class="box no-data">
+    <div ng-if="adsData.ads.length==0" class="box no-data">
         No ads found.
     </div>
 
+    <pagination
+            page="startPage"
+            ng-model="currentPage"
+            total-items="adsData.numItems"
+            ng-change="pageChanged()"
+            items-per-page="pageSize">
+    </pagination>
 
 </div>

@@ -13,10 +13,14 @@ app.factory('filter', function () {
         return filterParams;
     }
 
+    function setPageParams(pageParams) {
+
+    }
     return {
         filterByCategory: filterByCategory,
         filterByTown: filterByTown,
-        getFilterParams: getFilterParams
+        getFilterParams: getFilterParams,
+        setPageParams: setPageParams
     }
 
 });
